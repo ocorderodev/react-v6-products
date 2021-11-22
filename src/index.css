@@ -1,0 +1,381 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+* -- BASE STYLES --
+* Most of these are inherited from Base, but I want to change a few.
+*/
+body {
+  line-height: 1.7em;
+  color: #ffffff;
+  font-size: 13px;
+  background-color: #111;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label {
+  color: #ffffff;
+}
+
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+* -- LAYOUT STYLES --
+* These are some useful classes which I will need
+*/
+.l-box {
+  padding: 1em;
+}
+
+.l-box-lrg {
+  padding: 2em;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.is-center {
+  text-align: center;
+}
+
+.pure-menu.pure-menu-fixed {
+  box-shadow: 0 10px 25px rgba(92,99,105,.2);
+}
+
+/*
+* -- MENU STYLES --
+* I want to customize how my .pure-menu looks at the top of the page
+*/
+
+.home-menu {
+  padding: 0.5em;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu {
+  background: #2d3e50;
+}
+.pure-menu.pure-menu-fixed {
+  /* Fixed menus normally have a border at the bottom. */
+  border-bottom: none;
+  /* I need a higher z-index here because of the scroll-over effect. */
+  z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+  color: white;
+  font-weight: 400;
+  font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+  color: white;
+}
+
+.home-menu a {
+  color: #6FBEF3;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.pure-menu-link {
+  color: white !important;
+}
+
+/*
+* -- TABLET (AND UP) MEDIA QUERIES --
+* On tablets and other medium-sized devices, we want to customize some
+* of the mobile styles.
+*/
+@media (min-width: 48em) {
+
+  /* We increase the body font size */
+  body {
+      font-size: 16px;
+  }
+
+  /* We can align the menu header to the left, but float the
+  menu items to the right. */
+  .home-menu {
+      text-align: left;
+  }
+      .home-menu ul {
+          float: right;
+      }
+
+  /* We increase the height of the splash-container */
+/*    .splash-container {
+      height: 500px;
+  }*/
+
+  /* We decrease the width of the .splash, since we have more width
+  to work with */
+  .splash {
+      width: 50%;
+      height: 50%;
+  }
+
+  .splash-head {
+      font-size: 250%;
+  }
+
+
+  /* We remove the border-separator assigned to .l-box-lrg */
+  .l-box-lrg {
+      border: none;
+  }
+
+}
+
+/*
+* -- DESKTOP (AND UP) MEDIA QUERIES --
+* On desktops and other large devices, we want to over-ride some
+* of the mobile and tablet styles.
+*/
+@media (min-width: 78em) {
+  /* We increase the header font size even more */
+  .splash-head {
+      font-size: 300%;
+  }
+}
+
+.card__image {
+  width: 100%;
+  height: 300px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  margin-block: 2rem;
+  gap: 2rem;
+  padding-left: 10%;
+    padding-right: 10%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: clamp(20rem, calc(20rem + 2vw), 22rem);
+  overflow: hidden;
+  box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 1em;
+  border: 1px solid white;
+
+}
+
+.container {
+  padding-top: 10vh;
+}
+
+.card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.btn-update {
+  background-color: #111;
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-delete {
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+}
+
+.align__center__justify__content {
+  display: flex;
+  justify-content: center;
+}
+
+.pd__left_button {
+  padding-left: 10%;
+}
+
+
+/*FORM INPUT*/
+
+.form{
+  width: 40%;
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(92,99,105,.2);
+}
+
+.form__div{
+  position: relative;
+  height: 48px;
+  margin-bottom: 1.5rem;
+}
+.form__input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  border: 1px solid #DADCE0;
+  border-radius: .5rem;
+  outline: none;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+  color: white;
+}
+.form__label{
+  position: absolute;
+  left: 1rem;
+  top: .7rem;
+  padding: 0 .25rem;
+  color: white;
+  font-size: 1rem;
+  transition: .3s;
+}
+
+.form__group {
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.button__wrapper {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 5% auto;
+}
+
+.button__wrapper span.label {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  background: #111;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 10px 0;
+  font-size: 12px;
+  height: 50px;
+}
+
+.label__upload {
+  top: -0.7rem;
+  left: 0.8rem;
+  font-size: .75rem;
+  background-color: #111;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+#upload {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form__input:focus + .form__label{
+  top: -.7rem;
+  left: .8rem;
+  color: white;
+  font-size: .75rem;
+  font-weight: 500;
+  background-color: #111;
+  z-index: 10;
+}
+
+/*Input focus sticky top label*/
+.form__input:not(:placeholder-shown).form__input:not(:focus)+ .form__label{
+  top: -.7rem;
+  left: .8rem;
+  font-size: .75rem;
+  font-weight: 500;
+  z-index: 10;
+  background-color: #111;
+}
+
+/*Input focus*/
+.form__input:focus{
+  border: 1.5px solid white;
+}
+
+.bottom-10 {
+  padding-bottom: 10px;
+  display: block;
+}
+
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.button-success {
+  background: rgb(28, 184, 65);
+  /* this is a green */
+}
+
+.button-danger {
+  background: rgb(230, 9, 39);
+  color: white;
+  /* this is a green */
+}
+
+.spacing {
+  padding-bottom: 5vh;
+}
+
+@media (max-width: 500px) {
+
+  .form {
+    width: 100% !important;
+  }
+}
